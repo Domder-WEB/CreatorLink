@@ -11,47 +11,47 @@ function openEditor() {
   document.getElementById("creatorForm").classList.add("hidden");
 }
 
-/* 🎥 CREATOR */
+/* CREATOR */
 function sendCreator() {
   fetch(CREATOR_WEBHOOK, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       content:
-`🎥 **NEW CREATOR REQUEST**
-━━━━━━━━━━━━━━
-👤 ${c_name.value}
-📸 ${c_ig.value}
-📱 ${c_platform.value}
-🎬 ${c_style.value}
-💰 ${c_budget.value}
-💳 ${c_payment.value}
-📝 ${c_extra.value}
-━━━━━━━━━━━━━━`
+`🎥 CreatorLink – Creator Request
+────────────────
+👤 Name: ${c_name.value}
+📸 IG: ${c_ig.value}
+📱 Platform: ${c_platform.value}
+🎬 Style: ${c_style.value}
+💰 Budget: ${c_budget.value}
+💳 Payment: ${c_payment.value}
+📝 Notes: ${c_extra.value}
+────────────────`
     })
   });
 
-  alert("Odesláno 🚀");
+  alert("Odesláno");
 }
 
-/* ✂️ EDITOR */
+/* EDITOR */
 function sendEditor() {
   fetch(EDITOR_WEBHOOK, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       content:
-`✂️ **NEW EDITOR REQUEST**
-━━━━━━━━━━━━━━
-👤 ${e_name.value}
-📸 ${e_ig.value}
-⚡ ${e_skills.value}
-💰 ${e_price.value}
-💳 ${e_payment.value}
-📁 ${e_portfolio.value}
-━━━━━━━━━━━━━━`
+`✂️ CreatorLink – Editor Request
+────────────────
+👤 Name: ${e_name.value}
+📸 IG: ${e_ig.value}
+⚡ Skills: ${e_skills.value}
+💰 Price: ${e_price.value}
+💳 Payment: ${e_payment.value}
+📁 Portfolio: ${e_portfolio.value}
+────────────────`
     })
   });
 
-  alert("Odesláno 🚀");
+  alert("Odesláno");
 }

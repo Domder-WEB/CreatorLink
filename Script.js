@@ -1,4 +1,4 @@
-const DISCORD_WEBHOOK = "TVUJ_WEBHOOK_HERE";
+const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1519059624798458020/oaPJD_BUV-n3cVfXPTrpXCz9TgaZ607iOJysFrAJ9UJ8ZH8WF92aN6MXEfE_c_5afyb-";
 
 // SHOW FORMS
 function showCreator() {

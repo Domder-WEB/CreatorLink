@@ -1,71 +1,73 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: #0b0b0b;
-  color: white;
-  scroll-behavior: smooth;
+  font-family: system-ui, Arial;
+  background: #ffffff;
+  color: #111;
 }
 
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
+/* NAV */
+.nav {
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
 }
 
 .logo {
-  font-weight: bold;
-  color: #7c3aed;
+  font-weight: 600;
 }
 
 .links a {
   margin-left: 15px;
-  color: white;
   text-decoration: none;
-  opacity: 0.7;
-}
-
-.links a:hover {
-  opacity: 1;
+  color: #444;
 }
 
 /* HERO */
 .hero {
-  padding: 140px 20px 80px;
   text-align: center;
+  padding: 100px 20px;
 }
 
 .hero h1 {
   font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.sub {
+  color: #666;
+  max-width: 600px;
+  margin: auto;
 }
 
 /* SECTIONS */
 .section {
-  padding: 80px 20px;
   max-width: 900px;
   margin: auto;
+  padding: 60px 20px;
 }
 
 .dark {
-  background: #111;
-  border-radius: 20px;
+  background: #f6f6f6;
+  border-radius: 12px;
 }
 
-/* BUTTONS */
-.buttons button {
-  margin: 10px;
-  padding: 12px 20px;
-  border: none;
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #eee;
   border-radius: 10px;
-  background: #7c3aed;
-  color: white;
-  cursor: pointer;
 }
 
 /* FORM */
@@ -77,22 +79,24 @@ input, textarea, select {
   width: 100%;
   margin: 10px 0;
   padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: #1a1a1a;
-  color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: #7c3aed;
+  background: black;
   color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* HIDE */
 .hidden {
   display: none;
+}
+
+.buttons button {
+  margin: 10px;
 }

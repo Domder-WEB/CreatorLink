@@ -1,5 +1,5 @@
-const CREATOR_WEBHOOK = "CREATOR_WEBHOOK";
-const EDITOR_WEBHOOK = "EDITOR_WEBHOOK";
+const CREATOR_WEBHOOK = "https://discord.com/api/webhooks/1519068893031829566/h0ptVI3XlRGcqnbGiNecVojBvq0g0bj1LVnTgEJ_12-DhRXquEAnEohssifpNjmnW2OL";
+const EDITOR_WEBHOOK = "https://discord.com/api/webhooks/1519059624798458020/oaPJD_BUV-n3cVfXPTrpXCz9TgaZ607iOJysFrAJ9UJ8ZH8WF92aN6MXEfE_c_5afyb-";
 
 function openCreator() {
   document.getElementById("creatorForm").classList.remove("hidden");

@@ -8,72 +8,124 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
+<!-- NAV -->
+<nav class="nav">
   <div class="logo">CreatorLink</div>
-
   <div class="links">
-    <a href="#home">Home</a>
-    <a href="#creators">Creators</a>
-    <a href="#editors">Editors</a>
-    <a href="#forms">Forms</a>
+    <a href="#about">O platformě</a>
+    <a href="#how">Jak to funguje</a>
+    <a href="#creators">Tvůrci</a>
+    <a href="#editors">Editoři</a>
+    <a href="#join">Připojit se</a>
   </div>
 </nav>
 
-<!-- HOME -->
-<section id="home" class="hero">
-  <h1>Propojujeme tvůrce a editory</h1>
+<!-- HERO -->
+<header class="hero">
+  <h1>Propojujeme tvůrce a video editory</h1>
+
   <p>
-    CreatorLink je jednoduchý systém, který spojuje content creatory
-    s video editory přes Discord během pár sekund.
+    CreatorLink je jednoduchá platforma, která spojuje content creatory s video editory
+    na základě stylu, rozpočtu a požadované kvality.
+  </p>
+
+  <p class="sub">
+    Cílem je odstranit chaos v komunikaci, DM zprávách a hledání spolehlivých editorů.
+  </p>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>O platformě</h2>
+  <p>
+    CreatorLink vznikl jako odpověď na problém, který má většina tvůrců —
+    nedostatek spolehlivých editorů a zdlouhavé hledání.
+  </p>
+
+  <p>
+    Místo náhodného kontaktování lidí funguje systém jednoduše:
+    vyplníš požadavek a ten je okamžitě zpracován v našem systému přes Discord.
   </p>
 </section>
 
+<!-- HOW IT WORKS -->
+<section id="how" class="section dark">
+  <h2>Jak to funguje</h2>
+
+  <div class="grid">
+    <div class="box">
+      <h3>1. Vyplníš formulář</h3>
+      <p>Tvůrce nebo editor popíše svůj styl, požadavky a očekávání.</p>
+    </div>
+
+    <div class="box">
+      <h3>2. Odeslání do systému</h3>
+      <p>Data se automaticky odešlou do privátního Discord serveru.</p>
+    </div>
+
+    <div class="box">
+      <h3>3. Manuální propojení</h3>
+      <p>Na základě stylu, rozpočtu a zkušeností proběhne výběr vhodného partnera.</p>
+    </div>
+  </div>
+</section>
+
 <!-- CREATORS -->
-<section id="creators" class="section dark">
-  <h2>🎥 Pro tvůrce</h2>
+<section id="creators" class="section">
+  <h2>Pro tvůrce</h2>
+
   <p>
-    Nemusíš hledat editory ručně. Stačí vyplnit formulář a my tě spojíme
-    s někým, kdo odpovídá tvému stylu, rozpočtu a tempu.
+    Pokud vytváříš obsah na TikTok, YouTube nebo Instagram, CreatorLink ti umožní
+    najít editora bez zbytečného hledání nebo zkoušení náhodných kontaktů.
+  </p>
+
+  <p>
+    Stačí popsat svůj styl a požadavky — a systém tě propojí s někým,
+    kdo odpovídá tvému obsahu i rozpočtu.
   </p>
 
   <ul>
-    <li>⚡ rychlé propojení</li>
-    <li>🎯 matching podle stylu</li>
-    <li>💰 flexibilní platby</li>
+    <li>Rychlé propojení s editorem</li>
+    <li>Výběr podle stylu a kvality</li>
+    <li>Flexibilní modely spolupráce</li>
   </ul>
 </section>
 
 <!-- EDITORS -->
-<section id="editors" class="section">
-  <h2>✂️ Pro editory</h2>
+<section id="editors" class="section dark">
+  <h2>Pro editory</h2>
+
   <p>
-    Získej reálné zakázky bez DM spamování. Tvůrci přijdou za tebou.
+    CreatorLink dává editorům přístup k reálným zakázkám od aktivních tvůrců.
+    Nejde o random nabídky, ale o konkrétní projekty s jasnými požadavky.
+  </p>
+
+  <p>
+    Cílem je propojit editory s lidmi, kteří jejich styl skutečně potřebují.
   </p>
 
   <ul>
-    <li>💼 reálné projekty</li>
-    <li>📈 růst portfolia</li>
-    <li>💸 stabilní příjem</li>
+    <li>Reálné zakázky</li>
+    <li>Budování portfolia</li>
+    <li>Dlouhodobá spolupráce</li>
   </ul>
 </section>
 
-<!-- FORMS -->
-<section id="forms" class="section dark">
-
-  <h2>📩 Formuláře</h2>
-  <p>Vyber, kdo jsi:</p>
+<!-- JOIN -->
+<section id="join" class="section">
+  <h2>Připojit se</h2>
+  <p>Vyber, kdo jsi, a odešli svůj požadavek.</p>
 
   <div class="buttons">
-    <button onclick="openCreator()">🎥 Tvůrce</button>
-    <button onclick="openEditor()">✂️ Editor</button>
+    <button onclick="openCreator()">Jsem tvůrce</button>
+    <button onclick="openEditor()">Jsem editor</button>
   </div>
 
   <!-- CREATOR FORM -->
   <div id="creatorForm" class="form hidden">
     <h3>Tvůrce</h3>
 
-    <input id="c_name" placeholder="Jméno / IG @">
+    <input id="c_name" placeholder="Jméno / IG">
     <input id="c_ig" placeholder="Instagram">
 
     <select id="c_platform">
@@ -82,7 +134,7 @@
       <option>Instagram</option>
     </select>
 
-    <textarea id="c_style" placeholder="Styl videa"></textarea>
+    <textarea id="c_style" placeholder="Popis stylu obsahu"></textarea>
 
     <input id="c_budget" placeholder="Rozpočet">
 
@@ -92,9 +144,9 @@
       <option>Revenue share</option>
     </select>
 
-    <textarea id="c_extra" placeholder="Další info"></textarea>
+    <textarea id="c_extra" placeholder="Další informace"></textarea>
 
-    <button onclick="sendCreator()">Odeslat do Discordu</button>
+    <button onclick="sendCreator()">Odeslat požadavek</button>
   </div>
 
   <!-- EDITOR FORM -->
@@ -102,9 +154,9 @@
     <h3>Editor</h3>
 
     <input id="e_name" placeholder="Jméno">
-    <input id="e_ig" placeholder="IG / portfolio">
+    <input id="e_ig" placeholder="Instagram / portfolio">
 
-    <textarea id="e_skills" placeholder="Skills"></textarea>
+    <textarea id="e_skills" placeholder="Popis skills"></textarea>
 
     <input id="e_price" placeholder="Cena za video">
 
@@ -114,11 +166,10 @@
       <option>Revenue share</option>
     </select>
 
-    <textarea id="e_portfolio" placeholder="Portfolio"></textarea>
+    <textarea id="e_portfolio" placeholder="Portfolio link"></textarea>
 
-    <button onclick="sendEditor()">Odeslat do Discordu</button>
+    <button onclick="sendEditor()">Odeslat požadavek</button>
   </div>
-
 </section>
 
 <script src="script.js"></script>

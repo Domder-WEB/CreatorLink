@@ -3,34 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CreatorLink</title>
+<title>Creator × Editor Hub</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
+<header class="hero fade">
   <h1>Propojujeme tvůrce a video editory</h1>
-  <p>Jednoduché spojení bez zbytečností. Vše jde přímo do Discordu.</p>
+
+  <p class="sub">
+    Moderní systém, který spojuje content creatory s profesionálními editory.
+    Žádné zdlouhavé hledání. Žádné DM spamování. Jen čisté propojení.
+  </p>
+
+  <div class="cta">
+    <button onclick="openCreator()">🎥 Hledám editora</button>
+    <button onclick="openEditor()">✂️ Jsem editor</button>
+  </div>
 </header>
 
-<!-- INFO TEXT -->
-<section class="info">
+<section class="section fade">
+  <h2>💡 Jak to funguje</h2>
+
   <p>
-    Tento systém funguje jako prostředník mezi tvůrci a editory.
-    Vyplníš formulář a tvůj požadavek se okamžitě odešle do našeho Discord serveru,
-    kde se s tebou spojíme.
+    Celý systém funguje jako jednoduchý most mezi dvěma světy — tvůrci a editory.
+    Vyplníš formulář a ten se okamžitě odešle do našeho Discord systému, kde se o vše postaráme.
   </p>
+
+  <div class="grid">
+    <div class="box">📝 Vyplníš jednoduchý formulář</div>
+    <div class="box">📩 Data jdou do Discordu</div>
+    <div class="box">🤝 Spojíme tě s vhodným člověkem</div>
+  </div>
 </section>
 
-<!-- BUTTONS -->
-<section class="buttons">
-  <button onclick="showCreator()">🎥 Hledám editora</button>
-  <button onclick="showEditor()">✂️ Jsem editor</button>
+<section class="section dark fade">
+  <h2>🎥 Pro tvůrce</h2>
+  <p>
+    Pokud tvoříš obsah na TikTok, YouTube nebo Instagram, nemusíš už hledat editory ručně.
+    Stačí nám říct, jaký styl chceš — a my tě spojíme s někým, kdo přesně sedí tvému obsahu.
+  </p>
+
+  <ul>
+    <li>⚡ Rychlé spojení s editorem</li>
+    <li>🎯 Matching podle stylu a rozpočtu</li>
+    <li>💰 Flexibilní modely spolupráce</li>
+  </ul>
 </section>
 
-<!-- CREATOR FORM -->
-<section id="creatorForm" class="form hidden">
-  <h2>Tvůrce</h2>
+<section class="section fade">
+  <h2>✂️ Pro editory</h2>
+  <p>
+    Už žádné hledání klientů po DM. Tady dostaneš reálné zakázky od tvůrců,
+    kteří přesně potřebují tvůj styl.
+  </p>
+
+  <ul>
+    <li>💼 Reálné projekty</li>
+    <li>📈 Budování portfolia</li>
+    <li>💸 Stabilní přísun zakázek</li>
+  </ul>
+</section>
+
+<section class="section dark fade">
+  <h2>🔥 Proč to funguje</h2>
+
+  <div class="grid">
+    <div class="box">🚫 Žádný chaos v DM</div>
+    <div class="box">⚡ Rychlé propojení</div>
+    <div class="box">🎯 Matching podle stylu</div>
+  </div>
+</section>
+
+<!-- FORMS -->
+<section id="creatorForm" class="form hidden fade">
+  <h2>🎥 Tvůrce formulář</h2>
 
   <input id="c_name" placeholder="Jméno / IG @">
   <input id="c_ig" placeholder="Instagram">
@@ -41,14 +88,14 @@
     <option>Instagram Reels</option>
   </select>
 
-  <textarea id="c_style" placeholder="Jaký styl editace chceš?"></textarea>
+  <textarea id="c_style" placeholder="Popiš styl videa"></textarea>
 
   <input id="c_budget" placeholder="Rozpočet">
 
   <select id="c_payment">
-    <option>Subscription (měsíčně)</option>
-    <option>Per video</option>
-    <option>Revenue share</option>
+    <option>💳 Subscription (měsíčně)</option>
+    <option>🎬 Per video</option>
+    <option>📈 Revenue share</option>
   </select>
 
   <textarea id="c_extra" placeholder="Další informace"></textarea>
@@ -56,9 +103,8 @@
   <button onclick="sendCreator()">Odeslat do Discordu</button>
 </section>
 
-<!-- EDITOR FORM -->
-<section id="editorForm" class="form hidden">
-  <h2>Editor</h2>
+<section id="editorForm" class="form hidden fade">
+  <h2>✂️ Editor formulář</h2>
 
   <input id="e_name" placeholder="Jméno">
   <input id="e_ig" placeholder="Instagram / portfolio">
@@ -68,9 +114,9 @@
   <input id="e_price" placeholder="Cena za video">
 
   <select id="e_payment">
-    <option>Subscription</option>
-    <option>Per video</option>
-    <option>Revenue share</option>
+    <option>💳 Subscription</option>
+    <option>🎬 Per video</option>
+    <option>📈 Revenue share</option>
   </select>
 
   <textarea id="e_portfolio" placeholder="Portfolio link"></textarea>

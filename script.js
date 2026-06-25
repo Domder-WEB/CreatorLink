@@ -1,15 +1,15 @@
 
-// ==========================
+// =========================
 // 🔗 DISCORD WEBHOOKS
-// ==========================
+// =========================
 
-const CREATOR_WEBHOOK = "YOUR_CREATOR_WEBHOOK";
-const EDITOR_WEBHOOK  = "YOUR_EDITOR_WEBHOOK";
+const CREATOR_WEBHOOK = "https://discord.com/api/webhooks/1519068893031829566/h0ptVI3XlRGcqnbGiNecVojBvq0g0bj1LVnTgEJ_12-DhRXquEAnEohssifpNjmnW2OL";
+const EDITOR_WEBHOOK  = "https://discord.com/api/webhooks/1519059624798458020/oaPJD_BUV-n3cVfXPTrpXCz9TgaZ607iOJysFrAJ9UJ8ZH8WF92aN6MXEfE_c_5afyb-";
 
 
-// ==========================
-// 🎛️ FORM TOGGLING
-// ==========================
+// =========================
+// 🎛 UI TOGGLES
+// =========================
 
 function openCreator() {
   document.getElementById("creatorForm").classList.remove("hidden");
@@ -22,22 +22,27 @@ function openEditor() {
 }
 
 
-// ==========================
-// 🧠 HELPERS
-// ==========================
+// =========================
+// 🧠 VALIDATION
+// =========================
 
-function isEmpty(value) {
-  return !value || value.trim().length === 0;
-}
-
-function notify(message) {
-  alert(message); // jednoduchý UX feedback (můžeš později vylepšit toastem)
+function isEmpty(v) {
+  return !v || v.trim().length === 0;
 }
 
 
-// ==========================
-// 🎥 CREATOR SUBMIT
-// ==========================
+// =========================
+// 🔔 NOTIFICATIONS (simple UX)
+// =========================
+
+function notify(msg) {
+  alert(msg);
+}
+
+
+// =========================
+// 🎥 CREATOR FORM
+// =========================
 
 async function sendCreator() {
 
@@ -49,9 +54,8 @@ async function sendCreator() {
   const payment = document.getElementById("c_payment").value;
   const extra = document.getElementById("c_extra").value;
 
-  // validation
   if (isEmpty(name) || isEmpty(style)) {
-    notify("Please fill required fields (Name + Style)");
+    notify("⚠️ Please fill required fields (Name + Style)");
     return;
   }
 
@@ -72,7 +76,7 @@ ${budget}
 💳 Payment model:
 ${payment}
 
-📝 Extra info:
+📝 Extra:
 ${extra}
 ━━━━━━━━━━━━━━━━━━`
   };
@@ -84,20 +88,20 @@ ${extra}
       body: JSON.stringify(payload)
     });
 
-    notify("Request sent successfully 🚀");
+    notify("✅ Request sent successfully!");
 
-    document.getElementById("creatorForm").reset?.();
+    document.getElementById("creatorForm").reset();
 
   } catch (err) {
-    notify("Error sending request ❌");
     console.error(err);
+    notify("❌ Failed to send request");
   }
 }
 
 
-// ==========================
-// ✂️ EDITOR SUBMIT
-// ==========================
+// =========================
+// ✂️ EDITOR FORM
+// =========================
 
 async function sendEditor() {
 
@@ -108,9 +112,8 @@ async function sendEditor() {
   const payment = document.getElementById("e_payment").value;
   const portfolio = document.getElementById("e_portfolio").value;
 
-  // validation
   if (isEmpty(name) || isEmpty(skills)) {
-    notify("Please fill required fields (Name + Skills)");
+    notify("⚠️ Please fill required fields (Name + Skills)");
     return;
   }
 
@@ -127,7 +130,7 @@ ${skills}
 💰 Price:
 ${price}
 
-💳 Payment model:
+💳 Payment:
 ${payment}
 
 📁 Portfolio:
@@ -142,12 +145,12 @@ ${portfolio}
       body: JSON.stringify(payload)
     });
 
-    notify("Application sent successfully 🚀");
+    notify("✅ Application sent successfully!");
 
-    document.getElementById("editorForm").reset?.();
+    document.getElementById("editorForm").reset();
 
   } catch (err) {
-    notify("Error sending application ❌");
     console.error(err);
+    notify("❌ Failed to send application");
   }
 }
